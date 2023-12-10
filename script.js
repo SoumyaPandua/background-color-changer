@@ -1,19 +1,9 @@
-const btns = document.querySelectorAll('.button');
-const body = document.querySelector('body');
-
-btns.forEach(function(button){
-     button.addEventListener('click',function(e){
-        if(e.target.id === 'gray'){
-             body.style.backgroundColor = e.target.id;
-        }
-        if(e.target.id === 'yellow'){
-            body.style.backgroundColor = e.target.id;
-        }
-        if(e.target.id === 'green'){
-            body.style.backgroundColor = e.target.id;
-        }
-        if(e.target.id === 'red'){
-            body.style.backgroundColor = e.target.id;
-        }
-    });
-});
+function bgdchanger(color){
+    return function(){
+        document.body.style.backgroundColor = `${color}`
+    }
+};
+document.getElementById('gray').onclick = bgdchanger('gray');
+document.getElementById('yellow').onclick = bgdchanger('yellow');
+document.getElementById('green').onclick = bgdchanger('green');
+document.getElementById('red').onclick = bgdchanger('red');
